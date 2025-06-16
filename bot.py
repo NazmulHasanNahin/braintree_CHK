@@ -7,13 +7,21 @@ from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 from datetime import datetime
 from p import check_card  # Make sure check_card(cc_line) is in p.py
 
+from keep_alive import keep_alive
+
+keep_alive()  # এটা bot এর উপরে বসাও
+
+# নিচে তোমার মূল bot কোড
+print("Bot running!")
+
+
 # BOT Configuration
 BOT_TOKEN = '8024766321:AAH9H-Ef4XXyauoiObFrrvr6TkOkdkJatSQ'   
 ADMIN_ID = 1741088392  # Replace with your Telegram user ID (int)
 
 bot = telebot.TeleBot(BOT_TOKEN)
 
-AUTHORIZED_USERS = {}
+AUTHORIZED_USERS = {1741088392,1425493110}
 
 # ---------------- Helper Functions ---------------- #
 
@@ -315,3 +323,4 @@ def mb3_handler(msg):
 
 # ---------------- Start Bot ---------------- #
 bot.infinity_polling()
+
